@@ -21,7 +21,7 @@ public class AccountingIntegration {
     private EurekaClient ec;
 
     public String pay(PaymentRequest paymentRequest) {
-        String result = restTemplate.postForObject("http://ACCOUNTINGAPI/api/v1/payment/service/pay",
+        String result = restTemplate.postForObject("http://ACCOUNTING/api/v1/payment/service/pay",
                 paymentRequest,
                 String.class);
         return result;
@@ -37,7 +37,7 @@ public class AccountingIntegration {
     private AtomicInteger index = new AtomicInteger();
 
     public String pay1(PaymentRequest paymentRequest) {
-        Application accounting = ec.getApplication("ACCOUNTINGAPI");
+        Application accounting = ec.getApplication("ACCOUNTING");
         List<InstanceInfo> instances = accounting.getInstances();
         for (InstanceInfo instanceInfo : instances) {
             System.out.println(instanceInfo);
@@ -51,7 +51,7 @@ public class AccountingIntegration {
         return result;
     }
     public String pay2(PaymentRequest paymentRequest) {
-        Application accounting = ec.getApplication("ACCOUNTINGAPI");
+        Application accounting = ec.getApplication("ACCOUNTING");
         List<InstanceInfo> instances = accounting.getInstances();
         for (InstanceInfo instanceInfo : instances) {
             System.out.println(instanceInfo);
