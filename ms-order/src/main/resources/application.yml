@@ -57,7 +57,7 @@ management:
     info:
       enabled: true
 info:
-  osman:
+  mydeneme:
     test: 'test1'
   app:
     ver: '1.0.1'

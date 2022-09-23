@@ -35,7 +35,7 @@ public class Caller implements CommandLineRunner {
         for (int i = 0; i < 60; i++) {
             try {
                 Thread.sleep(500);
-                String callme = callee.callme("osman" + i);
+                String callme = callee.callme("c" + i);
                 System.out.println(callme);
                 System.out.println("index : " + i + " State : " + accounting_cb.getState());
                 // System.out.println("Retry fail: " + metrics.getNumberOfFailedCallsWithRetryAttempt() + " success : " + metrics.getNumberOfSuccessfulCallsWithoutRetryAttempt() + " totalf : " + metrics.getNumberOfFailedCallsWithRetryAttempt());
