@@ -7,21 +7,21 @@ import org.springframework.stereotype.Component;
 @Component
 public class NotifierIntegration {
 
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
+    //@Autowired
+    //private RabbitTemplate rabbitTemplate;
 
     public void sendSMS(String dest,String message){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setDest(dest);
         sendMessage.setMessage(message);
-        rabbitTemplate.convertAndSend("notfication-exchange","sms-notification",sendMessage);
+        //rabbitTemplate.convertAndSend("notfication-exchange","sms-notification",sendMessage);
     }
 
     public void sendMail(String dest,String message){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setDest(dest);
         sendMessage.setMessage(message);
-        rabbitTemplate.convertAndSend("notfication-exchange","mail-notification",sendMessage);
+        //rabbitTemplate.convertAndSend("notfication-exchange","mail-notification",sendMessage);
     }
 
 }
