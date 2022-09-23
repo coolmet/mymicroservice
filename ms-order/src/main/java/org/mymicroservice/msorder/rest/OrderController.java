@@ -24,42 +24,42 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping("/place")
-    public OrderResult placeOrder(@Valid @RequestBody OrderRest orderRest) {
+    @PostMapping("/placeOrderApiGateway")
+    public OrderResult placeOrderApiGateway(@Valid @RequestBody OrderRest orderRest) {
         if (orderRest.getCustomerName() == null) {
             throw new IllegalArgumentException("customer name null olamaz");
         }
-        String s = orderService.placeOrder(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
+        String s = orderService.placeOrderApiGateway(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
         return new OrderResult().setDesc("order alındı : " + s)
                 .setOrderId(10L);
     }
 
-    @PostMapping("/place0")
-    public OrderResult placeOrder0(@Valid @RequestBody OrderRest orderRest) {
+    @PostMapping("/placeOrderLoadBalancer")
+    public OrderResult placeOrderLoadBalancer(@Valid @RequestBody OrderRest orderRest) {
         if (orderRest.getCustomerName() == null) {
             throw new IllegalArgumentException("customer name null olamaz");
         }
-        String s = orderService.placeOrder0(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
+        String s = orderService.placeOrderLoadBalancer(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
         return new OrderResult().setDesc("order alındı : " + s)
                 .setOrderId(10L);
     }
 
-    @PostMapping("/place1")
-    public OrderResult placeOrder1(@Valid @RequestBody OrderRest orderRest) {
+    @PostMapping("/placeOrderLoadBalancer2")
+    public OrderResult placeOrderLoadBalancer2(@Valid @RequestBody OrderRest orderRest) {
         if (orderRest.getCustomerName() == null) {
             throw new IllegalArgumentException("customer name null olamaz");
         }
-        String s = orderService.placeOrder1(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
+        String s = orderService.placeOrderLoadBalancer2(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
         return new OrderResult().setDesc("order alındı : " + s)
                 .setOrderId(10L);
     }
 
-    @PostMapping("/place2")
-    public OrderResult placeOrder2(@Valid @RequestBody OrderRest orderRest) {
+    @PostMapping("/placeOrderApiGateway2")
+    public OrderResult placeOrderApiGateway2(@Valid @RequestBody OrderRest orderRest) {
         if (orderRest.getCustomerName() == null) {
             throw new IllegalArgumentException("customer name null olamaz");
         }
-        String s = orderService.placeOrder2(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
+        String s = orderService.placeOrderApiGateway2(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
         return new OrderResult().setDesc("order alındı : " + s)
                 .setOrderId(10L);
     }

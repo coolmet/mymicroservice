@@ -15,7 +15,7 @@ public class OrderService {
     @Autowired
     private AccountingIntegration accountingIntegration;
 
-    public String placeOrder(Order order) {
+    public String placeOrderApiGateway(Order order) {
         orderDao.insertOrder(order);
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setCustomerId(1L);
@@ -23,10 +23,10 @@ public class OrderService {
         paymentRequest.setOrderId(order.getOrderId());
 
         // ...
-        return accountingIntegration.pay(paymentRequest);
+        return accountingIntegration.payApiGateway(paymentRequest);
     }
 
-    public String placeOrder0(Order order) {
+    public String placeOrderLoadBalancer(Order order) {
         orderDao.insertOrder(order);
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setCustomerId(1L);
@@ -34,10 +34,10 @@ public class OrderService {
         paymentRequest.setOrderId(order.getOrderId());
 
         // ...
-        return accountingIntegration.pay0(paymentRequest);
+        return accountingIntegration.payLoadBalancer(paymentRequest);
     }
 
-    public String placeOrder1(Order order) {
+    public String placeOrderLoadBalancer2(Order order) {
         orderDao.insertOrder(order);
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setCustomerId(1L);
@@ -45,9 +45,9 @@ public class OrderService {
         paymentRequest.setOrderId(order.getOrderId());
 
         // ...
-        return accountingIntegration.pay1(paymentRequest);
+        return accountingIntegration.payLoadBalancer2(paymentRequest);
     }
-    public String placeOrder2(Order order) {
+    public String placeOrderApiGateway2(Order order) {
         orderDao.insertOrder(order);
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setCustomerId(1L);
@@ -55,6 +55,6 @@ public class OrderService {
         paymentRequest.setOrderId(order.getOrderId());
 
         // ...
-        return accountingIntegration.pay2(paymentRequest);
+        return accountingIntegration.payApiGateway2(paymentRequest);
     }
 }
