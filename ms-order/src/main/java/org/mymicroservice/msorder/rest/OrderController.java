@@ -24,6 +24,16 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @PostMapping("/placeOrderFreign")
+    public OrderResult placeOrderFreign(@Valid @RequestBody OrderRest orderRest) {
+        if (orderRest.getCustomerName() == null) {
+            throw new IllegalArgumentException("customer name null olamaz");
+        }
+        String s = orderService.placeOrderFreign(OrderMapping.ORDER_MAPPING.toOrder(orderRest));
+        return new OrderResult().setDesc("order alındı : " + s)
+                .setOrderId(10L);
+    }
+
     @PostMapping("/placeOrderApiGateway")
     public OrderResult placeOrderApiGateway(@Valid @RequestBody OrderRest orderRest) {
         if (orderRest.getCustomerName() == null) {
@@ -63,6 +73,8 @@ public class OrderController {
         return new OrderResult().setDesc("order alındı : " + s)
                 .setOrderId(10L);
     }
+
+
 
     @PostMapping("/cancel/{oid}")
     public String cancelOrder(@PathVariable("oid") Long orderId) {

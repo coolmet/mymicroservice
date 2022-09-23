@@ -61,8 +61,6 @@ A
 .ms-order/.mvn/wrapper/maven-wrapper.properties,4\a\4a5c64ddf856dd6f1e215266298f62dca6df032a
 ~
 Nms-order/src/test/java/org/mymicroservice/msorder/MsOrderApplicationTests.java,1\a\1a2f38115e70911469fc9bd84bb790d0c44a75b6
-@
-ms-order/pom.xml,8\5\8520729f0142fa7ef5ea133a7156ca13d4b479a5
 E
 ms-accounting/HELP.md,7\a\7af63247a0616d3c59f798681b8a818915acc398
 c
@@ -77,7 +75,5 @@ F
 Xms-accounting/src/main/java/org/mymicroservice/msaccounting/MsAccountingApplication.java,b\e\bea584c1029eea8c40a7c16a6875d008410707f4
 ç
 ]ms-accounting/src/test/java/org/mymicroservice/msaccounting/MsAccountingApplicationTests.java,9\7\97203d11733e6cf8010b15ffb67f37faef626328
-y
-Ims-order/src/main/java/org/mymicroservice/msorder/MsOrderApplication.java,7\7\77dcfd4e111a837e105e04029b1dd7cdeb914041
 ã
 [node-discovery/src/main/java/org/mymicroservice/nodediscovery/NodeDiscoveryApplication.java,0\f\0f38c69c6d21dc1659d5fe35090ff823aec47d3e

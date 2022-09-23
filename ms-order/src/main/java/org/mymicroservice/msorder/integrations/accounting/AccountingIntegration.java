@@ -3,6 +3,7 @@ package org.mymicroservice.msorder.integrations.accounting;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.mymicroservice.msorder.integrations.accounting.models.PaymentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,13 +21,20 @@ public class AccountingIntegration {
     @Autowired
     private EurekaClient ec;
 
+    @Autowired
+    private IAccountIntegration accountIntegration;
+
+    public String payFeign(PaymentRequest paymentRequest) {
+        return accountIntegration.payFeign(paymentRequest);
+    }
+
     public String payApiGateway(PaymentRequest paymentRequest) {
         String result = restTemplate.postForObject("http://ACCOUNTINGAPI/api/v1/payment/service/pay",
                 paymentRequest,
                 String.class);
         return result;
     }
-
+    @Retry(name = "accounting_retry")
     public String payLoadBalancer(PaymentRequest paymentRequest) {
         String result = restTemplate.postForObject("http://ACCOUNTING/api/v1/payment/service/pay",
                 paymentRequest,

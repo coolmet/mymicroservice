@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+// @RefreshScope
 public class OrderService {
 
     @Autowired
@@ -15,13 +16,26 @@ public class OrderService {
     @Autowired
     private AccountingIntegration accountingIntegration;
 
+    //@Autowired
+    //private NotifierIntegration notifierIntegration;
+
+    public String placeOrderFreign(Order order) {
+        orderDao.insertOrder(order);
+        PaymentRequest paymentRequest = new PaymentRequest();
+        paymentRequest.setCustomerId(1L);
+        paymentRequest.setAmount(100.0F);
+        paymentRequest.setOrderId(order.getOrderId());
+        // ..
+        String pay = accountingIntegration.payFeign(paymentRequest);
+        //notifierIntegration.sendSMS(order.getCustomerNumber(),"İşleminiz alındı");
+        return pay;
+    }
     public String placeOrderApiGateway(Order order) {
         orderDao.insertOrder(order);
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setCustomerId(1L);
         paymentRequest.setAmount(100.0F);
         paymentRequest.setOrderId(order.getOrderId());
-
         // ...
         return accountingIntegration.payApiGateway(paymentRequest);
     }
@@ -32,7 +46,6 @@ public class OrderService {
         paymentRequest.setCustomerId(1L);
         paymentRequest.setAmount(100.0F);
         paymentRequest.setOrderId(order.getOrderId());
-
         // ...
         return accountingIntegration.payLoadBalancer(paymentRequest);
     }
@@ -43,7 +56,6 @@ public class OrderService {
         paymentRequest.setCustomerId(1L);
         paymentRequest.setAmount(100.0F);
         paymentRequest.setOrderId(order.getOrderId());
-
         // ...
         return accountingIntegration.payLoadBalancer2(paymentRequest);
     }
@@ -53,7 +65,6 @@ public class OrderService {
         paymentRequest.setCustomerId(1L);
         paymentRequest.setAmount(100.0F);
         paymentRequest.setOrderId(order.getOrderId());
-
         // ...
         return accountingIntegration.payApiGateway2(paymentRequest);
     }
