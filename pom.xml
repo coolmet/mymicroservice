@@ -17,6 +17,7 @@
         <module>node-discovery</module>
         <module>ms-order</module>
         <module>ms-accounting</module>
+        <module>ag-accounting</module>
     </modules>
 
     <properties>

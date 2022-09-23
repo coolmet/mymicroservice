@@ -79,7 +79,5 @@ Xms-accounting/src/main/java/org/mymicroservice/msaccounting/MsAccountingApplica
 ]ms-accounting/src/test/java/org/mymicroservice/msaccounting/MsAccountingApplicationTests.java,9\7\97203d11733e6cf8010b15ffb67f37faef626328
 y
 Ims-order/src/main/java/org/mymicroservice/msorder/MsOrderApplication.java,7\7\77dcfd4e111a837e105e04029b1dd7cdeb914041
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 ‹
 [node-discovery/src/main/java/org/mymicroservice/nodediscovery/NodeDiscoveryApplication.java,0\f\0f38c69c6d21dc1659d5fe35090ff823aec47d3e
