@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ms-notifier" />
         <module name="node-configuration" />
         <module name="ms-accounting" />
         <module name="ag-accounting" />
@@ -27,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="ag-accounting" options="-parameters" />
       <module name="ms-accounting" options="-parameters" />
+      <module name="ms-notifier" options="-parameters" />
       <module name="ms-order" options="-parameters" />
       <module name="node-configuration" options="-parameters" />
       <module name="node-discovery" options="-parameters" />

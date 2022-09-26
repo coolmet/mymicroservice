@@ -18,6 +18,7 @@
         <module>ms-order</module>
         <module>ms-accounting</module>
         <module>ag-accounting</module>
+        <module>ms-notifier</module>
     </modules>
 
     <properties>

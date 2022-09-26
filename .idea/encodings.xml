@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ag-accounting/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms-accounting/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-notifier/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ms-order/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node-configuration/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/node-discovery/src/main/java" charset="UTF-8" />
